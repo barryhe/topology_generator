@@ -7,4 +7,5 @@ public:
 	~Manager();
 private:
 	std::vector<class Domain *> domains;
+	std::string getRandomId(); 
 };
