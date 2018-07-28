@@ -1,16 +1,17 @@
 #include <iostream> 
 #include <string>
 #include <sstream>
+#include "Manager.h"
 
 int main(int argc, char** argv) {
 
-	int num_domains = -1; 
-	int num_nodes = -1; 
-	int num_hosts = -1; 
-	int num_edges = -1; 
-	int num_border = -1; 
+	int num_domains = 10; 
+	int num_nodes = 20; 
+	int num_hosts = 5; 
+	int num_edges = 5; 
+	int num_borders = 5; 
 
-	for (int i = 0; i < argc; ++i) {
+	for (int i = 1; i < argc; ++i) {
 		std::string curr (argv[i]); 
 		std::stringstream ss; 
 		if (curr == "--help") {
@@ -33,18 +34,22 @@ int main(int argc, char** argv) {
 			ss >> num_edges;
 		} else if (curr.substr(0, 3) == "-b=") {
 			ss << curr.substr(3); 
-			ss >> num_border;
+			ss >> num_borders;
 		} else if (curr.substr(0, 3) == "-h=") {
 			ss << curr.substr(3);
 			ss >> num_hosts; 
 		} else {
-			std::cout << "Error: invalid option detected. Type './topo_generator --help' for more information" std::endl;
+			std::cout << "Error: invalid option detected. Type './topo_generator --help' for more information" << std::endl;
+			return 0;
 		}
 	}
-	if (num_hosts == -1 || num_border == -1 || num_edges == -1 || num_nodes == -1 || num_domains == -1) {
-		std::cout << "Error: invalid number detected. Type './topo_generator --help' for more information" std::endl;
+	if (num_nodes < num_borders) {
+		std::cout << "Error: num of border nodes must be smaller or equal to num of nodes within a domain. Type './topo_generator --help' for more information" << std::endl;
+		return 0;
 	}
 
-	
+	Manager * networkManager = new Manager(num_domains, num_nodes, num_hosts, num_edges, num_borders); 
+
+	delete networkManager;
 
 }
