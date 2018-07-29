@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 	int num_hosts = 5; 
 	int num_edges = 5; 
 	int num_borders = 5; 
-	bool log = true; 
+	bool log = false; 
 
 	for (int i = 1; i < argc; ++i) {
 		std::string curr (argv[i]); 
@@ -50,16 +50,22 @@ int main(int argc, char** argv) {
 		std::cout << "Error: num of border nodes must be smaller or equal to num of nodes within a domain. Type './topo_generator --help' for more information" << std::endl;
 		return 0;
 	}
-
-	Manager * networkManager = new Manager(num_domains, num_hosts, num_nodes, num_edges, num_borders, log); 
-
-	bool success = networkManager->runTopology(); 
-
-	if (!success) {
-		std::cout << "Error found in creating topology... " << std::endl;
+	if (num_domains < 1 || num_nodes < 1 || num_edges < 1) {
+		std::cout << "Error: invalid input number(s). Type './topo_generator --help' for more information" << std::endl;
+		return 0;
 	}
 
-	delete networkManager;
+	bool success = false;
+	while (!success) {
+		Manager * networkManager = new Manager(num_domains, num_hosts, num_nodes, num_edges, num_borders, log); 
+
+		success = networkManager->runTopology(); 
+
+		if (!success) {
+			std::cout << "Disconnected components exist in the topology. Generating again..." << std::endl;
+		} 
+		delete networkManager;	
+	}
 
 	return 0;
 }

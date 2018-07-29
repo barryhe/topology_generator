@@ -1,6 +1,7 @@
 #include <set>
 #include <vector>
 #include <string>
+#include <unordered_set>
 
 class Node {
 public:
@@ -8,6 +9,8 @@ public:
 
 	void addNeighbor(Node * neighbor); 
 	const std::vector<Node*> getNeighbors() { return neighbors; }
+	int getNeighborCount() { return neighbors.size(); }
+
 	int getNumNeighbors() { return num; }
 	const std::vector<std::string> & getHosts() { return hosts; }
 	std::string getId() { return id; }
@@ -22,6 +25,7 @@ private:
 	class Domain * mDomain;
 	class Domain * getDomain() { return mDomain; }
 	std::string id;
+	std::unordered_set<std::string> neighborIds;
 
 	int border_nodes; 
 };

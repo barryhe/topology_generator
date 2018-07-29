@@ -14,8 +14,15 @@ Node::Node(int num_edges, std::string rid, std::vector<std::string> & hostNames,
 }
 
 void Node::addNeighbor(Node * neighbor) {
+	if (neighborIds.find(neighbor->getId()) != neighborIds.end()) {
+		return;
+	}
+
 	if (neighbor->isBorder()) {
 		this->border_nodes++;
 	}
+	
+	neighborIds.insert(neighbor->getId());
 	neighbors.push_back(neighbor);
+
 }

@@ -31,4 +31,5 @@ private:
 
 	std::string id;
 	class Manager * mManager;
+	int mEdges;
 }; 

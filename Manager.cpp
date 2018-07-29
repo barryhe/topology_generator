@@ -8,6 +8,7 @@
 #include <iomanip>  
 #include <iostream>
 #include <unordered_set>
+#include <queue>
 
 #define charLength 4
 
@@ -60,6 +61,8 @@ Manager::~Manager() {
 	for (Domain * d : domains) {
 		delete d; 
 	}
+	log.close();
+
 }
 
 std::string Manager::getRandomId() {
@@ -117,8 +120,9 @@ bool Manager::runTopology() {
 		}
 	}
 
+	/*
 	if (doLog) {
-		log << "--Border nodes neighbors: " << std::endl;
+		log << "--Check border nodes neighbors: " << std::endl;
 		for (unsigned i = 0; i < domains.size(); ++i) {
 			log << domains[i]->getId() << std::endl;
 			for (unsigned j = 0; j < domains[i]->getNodes().size(); ++j) {
@@ -137,21 +141,80 @@ bool Manager::runTopology() {
 			}
 		}
 		log.flush();
-		log.close();
 
 		log << std::endl << std::endl;
 	}
+	*/
 
 	// connect nodes within domains next
 	for (unsigned i = 0; i < domains.size(); ++i) {
 		domains[i]->runRegularGraph(); 
 	}
 
+	if (doLog) {
+		log << "--Check nodes neighbors: " << std::endl;
+		for (unsigned i = 0; i < domains.size(); ++i) {
+			log << domains[i]->getId() << std::endl;
+			for (unsigned j = 0; j < domains[i]->getNodes().size(); ++j) {
+				log << "\t" << domains[i]->getNodes()[j]->getId() 
+					<< " " << domains[i]->getNodes()[j]->getNeighbors().size();
+
+				if (domains[i]->getNodes()[j]->isBorder()) {
+					log << " Border " << std::endl;
+				} else {
+					log << " Non-border " << std::endl;
+				}
+
+				for (unsigned k = 0; k < domains[i]->getNodes()[j]->getNeighbors().size(); ++k) {
+					log << "\t\t" << domains[i]->getNodes()[j]->getNeighbors()[k]->getId() << std::endl;
+				}
+			}
+		}
+		log.flush();
+
+		log << std::endl << std::endl;
+	}
+
 	// check connectivity & other criterion
+	// and also output it to the result file
+	// bfs traversing the whole network
+	int count = 0; 
+	std::unordered_set<Node *> visited;
+	std::queue<Node *> queue;
+	std::ofstream inet("inet_edges.txt");
 
+	queue.push(domains[0]->getNodes()[0]);
+	visited.insert(domains[0]->getNodes()[0]); 
 
-	// output it to a file
+	while (!queue.empty()) {
+		Node * curr = queue.front();
+		queue.pop();
+		count++; 
 
+		if (!curr->isBorder()) {
+			// if it's a non-border node, we output its edges to hosts as well
+			for (unsigned i = 0; i < curr->getHosts().size(); ++i) {
+				inet << curr->getId() << " " << curr->getHosts()[i] << std::endl;
+				inet << curr->getHosts()[i] << " " << curr->getId() << std::endl;
+			}
+		}
+
+		for (unsigned i = 0; i < curr->getNeighbors().size(); ++i) {
+			Node * n = curr->getNeighbors()[i]; 
+			if (visited.find(n) == visited.end()) {
+				visited.insert(n);
+				queue.push(n); 
+			} 
+			inet << curr->getId() << " " << n->getId() << std::endl;
+		}
+	}
+
+	inet.flush();
+	inet.close();
+
+	if (count != mNodes * mDomains) {
+		return false;
+	}
 
 	return true;
 }
