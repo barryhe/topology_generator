@@ -8,10 +8,14 @@ Node::Node(int num_edges, std::string rid, std::vector<std::string> & hostNames,
 		hosts.push_back(hostNames[i]);
 	}
 	this->id = rid;
+	this->border_nodes = 0;
 
 	mDomain = pDomain;
 }
 
 void Node::addNeighbor(Node * neighbor) {
-	neighbors.insert(neighbor);
+	if (neighbor->isBorder()) {
+		this->border_nodes++;
+	}
+	neighbors.push_back(neighbor);
 }

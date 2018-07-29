@@ -3,10 +3,12 @@
 #include "Manager.h"
 #include <iostream>
 
-Domain::Domain(int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, 
+Domain::Domain(std::string did, int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, 
 				std::vector<std::string> & nodeNames,
 				std::vector<std::string> & hostNames, 
 				Manager *pManager) {
+
+	this->id = did;
 
 	// initialization of non border nodes
 	// num_hosts - numborders = num_servers
@@ -41,7 +43,7 @@ Domain::~Domain() {
 	}
 }
 
-std::string Domain::generateRandomId() {
-	std::string res = "";
-	return res; 
+void Domain::runRegularGraph() {
+
 }
+

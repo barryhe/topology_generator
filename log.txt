@@ -1,0 +1,337 @@
+--Border nodes neighbors: 
+DOMAIN_vjer_422007
+	SWITCH_ohhw_121335 0 Non-border 
+	SWITCH_cdem_866009 0 Non-border 
+	SWITCH_tvme_411717 0 Non-border 
+	SWITCH_qtqn_873872 0 Non-border 
+	SWITCH_egkb_470176 0 Non-border 
+	SWITCH_jwap_378683 0 Non-border 
+	SWITCH_ogxx_983909 0 Non-border 
+	SWITCH_ozfs_816272 0 Non-border 
+	SWITCH_znjl_364795 0 Non-border 
+	SWITCH_femy_513979 0 Non-border 
+	SWITCH_bcal_886347 0 Non-border 
+	SWITCH_rxbr_092129 0 Non-border 
+	SWITCH_rhso_306210 0 Non-border 
+	SWITCH_xcge_145474 0 Non-border 
+	SWITCH_vdje_063632 0 Non-border 
+	SWITCH_dmxr_506563 4 Border 
+		SWITCH_bnge_784042
+		SWITCH_ujmn_454648
+		SWITCH_gduc_204256
+		SWITCH_kmaw_313969
+	SWITCH_qsms_524160 3 Border 
+		SWITCH_lozd_044353
+		SWITCH_unnq_631617
+		SWITCH_ysms_314748
+	SWITCH_sjdt_006056 4 Border 
+		SWITCH_zeaj_211298
+		SWITCH_wksc_939726
+		SWITCH_twww_023103
+		SWITCH_kmaw_313969
+	SWITCH_pmmk_840679 3 Border 
+		SWITCH_qxij_366510
+		SWITCH_abvi_937214
+		SWITCH_cksq_303333
+	SWITCH_tjcz_302012 3 Border 
+		SWITCH_umvp_280120
+		SWITCH_faxs_364760
+		SWITCH_wpgc_472207
+DOMAIN_utwh_989978
+	SWITCH_ovwi_116029 0 Non-border 
+	SWITCH_qxvw_388510 0 Non-border 
+	SWITCH_ajcc_567449 0 Non-border 
+	SWITCH_pymm_084548 0 Non-border 
+	SWITCH_luja_266798 0 Non-border 
+	SWITCH_kwfi_017886 0 Non-border 
+	SWITCH_dxyb_611379 0 Non-border 
+	SWITCH_frfa_685491 0 Non-border 
+	SWITCH_ucay_149931 0 Non-border 
+	SWITCH_dner_126852 0 Non-border 
+	SWITCH_qcyc_213868 0 Non-border 
+	SWITCH_koas_242442 0 Non-border 
+	SWITCH_gvve_978524 0 Non-border 
+	SWITCH_dlpi_866008 0 Non-border 
+	SWITCH_heph_419679 0 Non-border 
+	SWITCH_wksc_939726 4 Border 
+		SWITCH_sjdt_006056
+		SWITCH_ktmf_757152
+		SWITCH_cdru_347740
+		SWITCH_rapl_014101
+	SWITCH_wvgw_201676 4 Border 
+		SWITCH_qydi_826843
+		SWITCH_bifh_106202
+		SWITCH_bifh_106202
+		SWITCH_owol_406110
+	SWITCH_ngnn_417861 3 Border 
+		SWITCH_ocbs_080649
+		SWITCH_qxij_366510
+		SWITCH_ksoh_343387
+	SWITCH_jtxh_301978 2 Border 
+		SWITCH_vwyg_854435
+		SWITCH_mriz_469669
+	SWITCH_vknl_848096 1 Border 
+		SWITCH_unnq_631617
+DOMAIN_ynay_600555
+	SWITCH_pcds_271012 0 Non-border 
+	SWITCH_argn_246246 0 Non-border 
+	SWITCH_nqij_655316 0 Non-border 
+	SWITCH_gdsb_439168 0 Non-border 
+	SWITCH_sdmf_642940 0 Non-border 
+	SWITCH_ifsk_078957 0 Non-border 
+	SWITCH_mahs_835045 0 Non-border 
+	SWITCH_isno_134446 0 Non-border 
+	SWITCH_lcau_224756 0 Non-border 
+	SWITCH_tcql_676271 0 Non-border 
+	SWITCH_hdiv_160683 0 Non-border 
+	SWITCH_nfrf_155144 0 Non-border 
+	SWITCH_xtue_592646 0 Non-border 
+	SWITCH_omgb_626663 0 Non-border 
+	SWITCH_oohq_578183 0 Non-border 
+	SWITCH_ujmn_454648 2 Border 
+		SWITCH_dmxr_506563
+		SWITCH_koet_825634
+	SWITCH_rwzz_594322 2 Border 
+		SWITCH_bnge_784042
+		SWITCH_faxs_364760
+	SWITCH_lozd_044353 2 Border 
+		SWITCH_qsms_524160
+		SWITCH_cdru_347740
+	SWITCH_rapl_014101 3 Border 
+		SWITCH_wksc_939726
+		SWITCH_hcrq_059270
+		SWITCH_twww_023103
+	SWITCH_abvi_937214 4 Border 
+		SWITCH_pmmk_840679
+		SWITCH_twww_023103
+		SWITCH_kmaw_313969
+		SWITCH_wpgc_472207
+DOMAIN_mmre_416666
+	SWITCH_jvpp_671448 0 Non-border 
+	SWITCH_buaz_613156 0 Non-border 
+	SWITCH_qwki_745607 0 Non-border 
+	SWITCH_xtwa_051663 0 Non-border 
+	SWITCH_uess_136159 0 Non-border 
+	SWITCH_kgje_564645 0 Non-border 
+	SWITCH_lnia_026589 0 Non-border 
+	SWITCH_ybza_103357 0 Non-border 
+	SWITCH_przb_464102 0 Non-border 
+	SWITCH_yyuw_283269 0 Non-border 
+	SWITCH_wqgq_076224 0 Non-border 
+	SWITCH_daro_770315 0 Non-border 
+	SWITCH_czwk_354422 0 Non-border 
+	SWITCH_blba_023960 0 Non-border 
+	SWITCH_gref_940861 0 Non-border 
+	SWITCH_gduc_204256 2 Border 
+		SWITCH_dmxr_506563
+		SWITCH_xhuy_093573
+	SWITCH_uara_472461 2 Border 
+		SWITCH_ocbs_080649
+		SWITCH_faxs_364760
+	SWITCH_cdru_347740 3 Border 
+		SWITCH_wksc_939726
+		SWITCH_lozd_044353
+		SWITCH_pagw_950709
+	SWITCH_zytv_401945 2 Border 
+		SWITCH_muij_176840
+		SWITCH_qxij_366510
+	SWITCH_twww_023103 4 Border 
+		SWITCH_sjdt_006056
+		SWITCH_rapl_014101
+		SWITCH_abvi_937214
+		SWITCH_lhnj_869055
+DOMAIN_vvkl_645525
+	SWITCH_pqbt_425721 0 Non-border 
+	SWITCH_yxvm_752297 0 Non-border 
+	SWITCH_cljv_440767 0 Non-border 
+	SWITCH_wcuh_742087 0 Non-border 
+	SWITCH_lkmx_114452 0 Non-border 
+	SWITCH_nufa_205249 0 Non-border 
+	SWITCH_apxb_122649 0 Non-border 
+	SWITCH_vahq_765696 0 Non-border 
+	SWITCH_iuas_657212 0 Non-border 
+	SWITCH_vquq_303153 0 Non-border 
+	SWITCH_kbkw_131399 0 Non-border 
+	SWITCH_tjua_589296 0 Non-border 
+	SWITCH_cbaz_832157 0 Non-border 
+	SWITCH_kwgr_085434 0 Non-border 
+	SWITCH_vcjx_046808 0 Non-border 
+	SWITCH_ysms_314748 1 Border 
+		SWITCH_qsms_524160
+	SWITCH_lekx_241786 2 Border 
+		SWITCH_hcrq_059270
+		SWITCH_pqrg_801460
+	SWITCH_ktmf_757152 1 Border 
+		SWITCH_wksc_939726
+	SWITCH_xhuy_093573 2 Border 
+		SWITCH_gduc_204256
+		SWITCH_mriz_469669
+	SWITCH_bifh_106202 2 Border 
+		SWITCH_wvgw_201676
+		SWITCH_wvgw_201676
+DOMAIN_yysv_976614
+	SWITCH_meaa_587754 0 Non-border 
+	SWITCH_uauc_453382 0 Non-border 
+	SWITCH_umym_397167 0 Non-border 
+	SWITCH_njrl_375700 0 Non-border 
+	SWITCH_xzon_624697 0 Non-border 
+	SWITCH_gogz_020432 0 Non-border 
+	SWITCH_mloo_805437 0 Non-border 
+	SWITCH_yjou_198868 0 Non-border 
+	SWITCH_rpzp_532183 0 Non-border 
+	SWITCH_edmv_230305 0 Non-border 
+	SWITCH_burp_459456 0 Non-border 
+	SWITCH_zywf_106928 0 Non-border 
+	SWITCH_ftkv_511999 0 Non-border 
+	SWITCH_ywto_145718 0 Non-border 
+	SWITCH_ggfi_619724 0 Non-border 
+	SWITCH_kmaw_313969 4 Border 
+		SWITCH_dmxr_506563
+		SWITCH_abvi_937214
+		SWITCH_sjdt_006056
+		SWITCH_vwyg_854435
+	SWITCH_qydi_826843 2 Border 
+		SWITCH_wvgw_201676
+		SWITCH_zeaj_211298
+	SWITCH_lhnj_869055 4 Border 
+		SWITCH_neit_464606
+		SWITCH_twww_023103
+		SWITCH_yqqd_831388
+		SWITCH_owol_406110
+	SWITCH_mriz_469669 3 Border 
+		SWITCH_jtxh_301978
+		SWITCH_ekri_205250
+		SWITCH_xhuy_093573
+	SWITCH_qxij_366510 4 Border 
+		SWITCH_pmmk_840679
+		SWITCH_zytv_401945
+		SWITCH_ngnn_417861
+		SWITCH_koet_825634
+DOMAIN_cvcg_095744
+	SWITCH_yrvh_780559 0 Non-border 
+	SWITCH_vfde_667656 0 Non-border 
+	SWITCH_kyeb_971145 0 Non-border 
+	SWITCH_dirt_105968 0 Non-border 
+	SWITCH_myce_629340 0 Non-border 
+	SWITCH_bhzf_635013 0 Non-border 
+	SWITCH_qdel_836787 0 Non-border 
+	SWITCH_gjql_765546 0 Non-border 
+	SWITCH_dvnh_217955 0 Non-border 
+	SWITCH_cmjv_168224 0 Non-border 
+	SWITCH_xhgb_708157 0 Non-border 
+	SWITCH_hcvi_054972 0 Non-border 
+	SWITCH_iznp_144270 0 Non-border 
+	SWITCH_yxvq_706378 0 Non-border 
+	SWITCH_kvga_050733 0 Non-border 
+	SWITCH_hcrq_059270 3 Border 
+		SWITCH_rapl_014101
+		SWITCH_lekx_241786
+		SWITCH_vwyg_854435
+	SWITCH_wpgc_472207 4 Border 
+		SWITCH_tjcz_302012
+		SWITCH_bnge_784042
+		SWITCH_abvi_937214
+		SWITCH_zeaj_211298
+	SWITCH_umvp_280120 1 Border 
+		SWITCH_tjcz_302012
+	SWITCH_faxs_364760 3 Border 
+		SWITCH_tjcz_302012
+		SWITCH_rwzz_594322
+		SWITCH_uara_472461
+	SWITCH_ksoh_343387 2 Border 
+		SWITCH_ngnn_417861
+		SWITCH_ocbs_080649
+DOMAIN_nahn_430264
+	SWITCH_lzop_609700 0 Non-border 
+	SWITCH_ugdf_138940 0 Non-border 
+	SWITCH_bbnr_972260 0 Non-border 
+	SWITCH_mzsd_802063 0 Non-border 
+	SWITCH_sloq_034426 0 Non-border 
+	SWITCH_aduh_493958 0 Non-border 
+	SWITCH_uvrj_676286 0 Non-border 
+	SWITCH_ddqi_003066 0 Non-border 
+	SWITCH_sjlf_796368 0 Non-border 
+	SWITCH_wtbq_738064 0 Non-border 
+	SWITCH_mija_245598 0 Non-border 
+	SWITCH_caby_979540 0 Non-border 
+	SWITCH_ttem_960477 0 Non-border 
+	SWITCH_qsji_083178 0 Non-border 
+	SWITCH_tamg_331000 0 Non-border 
+	SWITCH_ocbs_080649 3 Border 
+		SWITCH_ngnn_417861
+		SWITCH_uara_472461
+		SWITCH_ksoh_343387
+	SWITCH_zeaj_211298 3 Border 
+		SWITCH_sjdt_006056
+		SWITCH_qydi_826843
+		SWITCH_wpgc_472207
+	SWITCH_bnge_784042 3 Border 
+		SWITCH_dmxr_506563
+		SWITCH_rwzz_594322
+		SWITCH_wpgc_472207
+	SWITCH_pagw_950709 1 Border 
+		SWITCH_cdru_347740
+	SWITCH_koet_825634 3 Border 
+		SWITCH_qxij_366510
+		SWITCH_cksq_303333
+		SWITCH_ujmn_454648
+DOMAIN_ncud_025883
+	SWITCH_faab_378681 0 Non-border 
+	SWITCH_kqiu_897936 0 Non-border 
+	SWITCH_tdkd_724647 0 Non-border 
+	SWITCH_zsqb_673390 0 Non-border 
+	SWITCH_hvih_291845 0 Non-border 
+	SWITCH_xwjt_302388 0 Non-border 
+	SWITCH_oaco_856169 0 Non-border 
+	SWITCH_aauk_864240 0 Non-border 
+	SWITCH_ngaa_571088 0 Non-border 
+	SWITCH_szdj_319991 0 Non-border 
+	SWITCH_dswl_552000 0 Non-border 
+	SWITCH_ckvl_250373 0 Non-border 
+	SWITCH_vaez_416211 0 Non-border 
+	SWITCH_ibtc_567122 0 Non-border 
+	SWITCH_pstr_506141 0 Non-border 
+	SWITCH_ekri_205250 1 Border 
+		SWITCH_mriz_469669
+	SWITCH_unnq_631617 3 Border 
+		SWITCH_qsms_524160
+		SWITCH_vknl_848096
+		SWITCH_pqrg_801460
+	SWITCH_muij_176840 1 Border 
+		SWITCH_zytv_401945
+	SWITCH_neit_464606 1 Border 
+		SWITCH_lhnj_869055
+	SWITCH_adgv_610277 1 Border 
+		SWITCH_pqrg_801460
+DOMAIN_fgub_617988
+	SWITCH_ygos_172478 0 Non-border 
+	SWITCH_pqnf_515977 0 Non-border 
+	SWITCH_vpci_223307 0 Non-border 
+	SWITCH_offs_947097 0 Non-border 
+	SWITCH_gaas_680335 0 Non-border 
+	SWITCH_czsz_817878 0 Non-border 
+	SWITCH_czlq_847882 0 Non-border 
+	SWITCH_ofhe_642189 0 Non-border 
+	SWITCH_szcx_769950 0 Non-border 
+	SWITCH_plow_119687 0 Non-border 
+	SWITCH_icfk_065041 0 Non-border 
+	SWITCH_roxj_386406 0 Non-border 
+	SWITCH_zlmk_774799 0 Non-border 
+	SWITCH_fbin_174915 0 Non-border 
+	SWITCH_vhgz_645897 0 Non-border 
+	SWITCH_pqrg_801460 3 Border 
+		SWITCH_adgv_610277
+		SWITCH_lekx_241786
+		SWITCH_unnq_631617
+	SWITCH_yqqd_831388 1 Border 
+		SWITCH_lhnj_869055
+	SWITCH_owol_406110 2 Border 
+		SWITCH_lhnj_869055
+		SWITCH_wvgw_201676
+	SWITCH_cksq_303333 2 Border 
+		SWITCH_pmmk_840679
+		SWITCH_koet_825634
+	SWITCH_vwyg_854435 3 Border 
+		SWITCH_jtxh_301978
+		SWITCH_kmaw_313969
+		SWITCH_hcrq_059270

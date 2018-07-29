@@ -5,7 +5,7 @@
 
 class Domain {
 public:
-	Domain(int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, 
+	Domain(std::string did, int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, 
 			std::vector<std::string> & nodeNames,
 			std::vector<std::string> & hostNames, 
 			class Manager *pManager);
@@ -18,12 +18,17 @@ public:
 		return borders;
 	}
 
+	std::string & getId() { return id; }
+
+	void runRegularGraph();
+
+	// Node * getRandomBorderNode (); 
+
 private:
 	std::vector<class Node*> nodes;
 	std::vector<class Node*> non_borders; 
 	std::vector<class Node*> borders; // can 
 
-	std::string generateRandomId(); 
-
+	std::string id;
 	class Manager * mManager;
 }; 
