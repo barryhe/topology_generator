@@ -212,7 +212,6 @@ bool Manager::runTopology() {
 	inet.flush();
 	inet.close();
 
-	std::cout << idSet.size() << " " << mHosts * mDomains * (mNodes - mBorders) << std::endl;
 	if (count != mNodes * mDomains 
 		|| idSet.size() - mHosts * mDomains * (mNodes - mBorders) != 0) {
 		return false;
