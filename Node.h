@@ -4,7 +4,7 @@
 
 class Node {
 public:
-	Node(int num_edges, std::vector<std::string> & hostNames);
+	Node(int num_edges, std::vector<std::string> & hostNames, class Domain * pDomain);
 
 	void addNeighbor(Node * neighbor); 
 	const std::set<Node*> getNeighbors() { return neighbors; }
@@ -14,4 +14,6 @@ private:
 	std::set<Node*> neighbors;
 
 	std::vector<std::string> hosts; 
+
+	class Domain * mDomain;
 };
