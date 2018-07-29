@@ -22,8 +22,6 @@ public:
 
 	void runRegularGraph();
 
-	// Node * getRandomBorderNode (); 
-
 private:
 	std::vector<class Node*> nodes;
 	std::vector<class Node*> non_borders; 

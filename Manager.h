@@ -1,5 +1,6 @@
 #include <vector>
 #include <fstream>
+#include <unordered_set>
 
 class Manager {
 public:
@@ -10,6 +11,7 @@ public:
 
 	bool runTopology();
 private:
+	std::unordered_set<std::string> idSet; // includes the id's of switches (border/non-borders) and hosts
 	std::vector<class Domain *> domains;
 	std::string getRandomId(); 
 	int mDomains;

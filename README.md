@@ -3,7 +3,15 @@ Topology generator for H-SDN testing.
 Usage: 
 pull this repo and type 'make' to get the executable 'topo_generator'. 
 
-`./inet_edge_generator -d=[num of domains] -n=[num of nodes in each domain] -h=[num of hosts] -e=[num of edges] -b=[num of border nodes]`
+`./inet_edge_generator 
+-d=[num of domains] 
+-n=[num of nodes in each domain] 
+-h=[num of hosts] 
+-e=[num of edges] 
+-b=[num of border nodes]
+[-l]`
+
+option '-l' will output all logs to 'log.txt'
 
 default params: 
 * num of domains = 10  

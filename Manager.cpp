@@ -23,7 +23,6 @@ Manager::Manager(int num_domains, int num_hosts, int num_nodes, int num_edges, i
 	log.open("log.txt");
 
 	// initialize domains
-	std::unordered_set<std::string> idSet;
 	srand(time(NULL));
 
 	// generating id's for domains
@@ -190,6 +189,7 @@ bool Manager::runTopology() {
 		Node * curr = queue.front();
 		queue.pop();
 		count++; 
+		idSet.erase(curr->getId());
 
 		if (!curr->isBorder()) {
 			// if it's a non-border node, we output its edges to hosts as well
@@ -212,7 +212,9 @@ bool Manager::runTopology() {
 	inet.flush();
 	inet.close();
 
-	if (count != mNodes * mDomains) {
+	std::cout << idSet.size() << " " << mHosts * mDomains * (mNodes - mBorders) << std::endl;
+	if (count != mNodes * mDomains 
+		|| idSet.size() - mHosts * mDomains * (mNodes - mBorders) != 0) {
 		return false;
 	}
 
