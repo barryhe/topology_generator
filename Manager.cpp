@@ -23,22 +23,23 @@ Manager::Manager(int num_domains, int num_hosts, int num_nodes, int num_edges, i
 
 		// generate id's for nodes
 		for (int j = 0; j < num_nodes; ++j) {
-			const std::string randId = getRandomId(); 
-			if (idSet.find(randId) != idSet.end()) {
+			const std::string randId = "SWITCH_" + getRandomId(); 
+			if (idSet.find(randId) == idSet.end()) {
 				idSet.insert(randId); 
-				nodeNames.push_back("SWITCH_" + randId); 
+				nodeNames.push_back(randId); 
 			}
 		} 
 
 		// generate id's for hosts
-		for (int j = 0; j < num_hosts; ++j) {
-			const std::string randId = getRandomId(); 
-			if (idSet.find(randId) != idSet.end()) {
-				idSet.insert(randId); 
-				hostNames.push_back("HOST_" + randId); 
+		for (int k = 0; k < num_nodes - num_borders; ++k) {
+			for (int j = 0; j < num_hosts; ++j) {
+				const std::string randId = "HOST_" + getRandomId(); 
+				if (idSet.find(randId) == idSet.end()) {
+					idSet.insert(randId); 
+					hostNames.push_back(randId); 
+				}
 			}
 		}
-
 		Domain * domain = new Domain(num_domains, num_hosts, num_nodes, num_edges, num_borders,
 									nodeNames, hostNames, this);
 		domains.push_back(domain); 

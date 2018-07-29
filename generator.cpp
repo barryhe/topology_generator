@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
 		return 0;
 	}
 
-	Manager * networkManager = new Manager(num_domains, num_nodes, num_hosts, num_edges, num_borders); 
+	Manager * networkManager = new Manager(num_domains, num_hosts, num_nodes, num_edges, num_borders); 
 
 	delete networkManager;
 

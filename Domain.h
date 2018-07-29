@@ -11,17 +11,17 @@ public:
 			class Manager *pManager);
 	~Domain();
 
-	const std::set<class Node*> getNodes() {
+	const std::vector<class Node*> & getNodes() {
 		return nodes;
 	}
-	const std::set<class Node*> getBorderNodes() {
+	const std::vector<class Node*> getBorderNodes() {
 		return borders;
 	}
 
 private:
-	std::set<class Node*> nodes;
-	std::set<class Node*> non_borders; 
-	std::set<class Node*> borders; // can 
+	std::vector<class Node*> nodes;
+	std::vector<class Node*> non_borders; 
+	std::vector<class Node*> borders; // can 
 
 	std::string generateRandomId(); 
 
