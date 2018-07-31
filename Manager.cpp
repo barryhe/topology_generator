@@ -19,11 +19,13 @@ Manager::Manager(int num_domains, int num_hosts, int num_nodes, int num_edges, i
 	mEdges	 = num_edges;
 	mBorders = num_borders;
 
+	nextAvailablePort = 0;
+
 	doLog = pLog;
 	log.open("log.txt");
 
 	// initialize domains
-	srand(time(NULL));
+	// srand(time(NULL));
 
 	// generating id's for domains
 	for (int i = 0; i < num_domains; ++i) {
@@ -194,8 +196,9 @@ bool Manager::runTopology() {
 		if (!curr->isBorder()) {
 			// if it's a non-border node, we output its edges to hosts as well
 			for (unsigned i = 0; i < curr->getHosts().size(); ++i) {
-				inet << curr->getId() << " " << curr->getHosts()[i] << std::endl;
-				inet << curr->getHosts()[i] << " " << curr->getId() << std::endl;
+				inet << curr->getId() << " " << curr->getHosts()[i] 
+					 << " " << useNextPort() << std::endl;
+				inet << curr->getHosts()[i] << " " << curr->getId() << " " << 0 << std::endl;
 			}
 		}
 
@@ -205,7 +208,8 @@ bool Manager::runTopology() {
 				visited.insert(n);
 				queue.push(n); 
 			} 
-			inet << curr->getId() << " " << n->getId() << std::endl;
+			
+			inet << curr->getId() << " " << n->getId() << " " << useNextPort() << std::endl;
 		}
 	}
 
@@ -218,4 +222,9 @@ bool Manager::runTopology() {
 	}
 
 	return true;
+}
+
+int Manager::useNextPort() {
+	nextAvailablePort++;
+	return nextAvailablePort - 1; 
 }

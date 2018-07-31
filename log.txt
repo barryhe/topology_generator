@@ -1,0 +1,103 @@
+--Check nodes neighbors: 
+DOMAIN_znnh_915019
+	SWITCH_ltlr_823534 3 Non-border 
+		SWITCH_avpr_302290
+		SWITCH_jzjs_820510
+		SWITCH_gkop_529867
+	SWITCH_avpr_302290 2 Non-border 
+		SWITCH_jzjs_820510
+		SWITCH_ltlr_823534
+	SWITCH_jzjs_820510 2 Non-border 
+		SWITCH_avpr_302290
+		SWITCH_ltlr_823534
+	SWITCH_gkop_529867 3 Border 
+		SWITCH_rliw_398927
+		SWITCH_unau_346035
+		SWITCH_ltlr_823534
+	SWITCH_jezk_239900 2 Border 
+		SWITCH_hcbp_283267
+		SWITCH_lmxu_449163
+DOMAIN_uwlg_389962
+	SWITCH_yhnd_312512 3 Non-border 
+		SWITCH_hcbp_283267
+		SWITCH_afha_108248
+		SWITCH_zrgl_810223
+	SWITCH_zrgl_810223 3 Non-border 
+		SWITCH_hcbp_283267
+		SWITCH_yhnd_312512
+		SWITCH_afha_108248
+	SWITCH_afha_108248 3 Non-border 
+		SWITCH_yhnd_312512
+		SWITCH_zrgl_810223
+		SWITCH_fmbx_991705
+	SWITCH_fmbx_991705 3 Border 
+		SWITCH_nyur_162397
+		SWITCH_pvjs_950148
+		SWITCH_afha_108248
+	SWITCH_hcbp_283267 3 Border 
+		SWITCH_jezk_239900
+		SWITCH_yhnd_312512
+		SWITCH_zrgl_810223
+DOMAIN_ihci_242244
+	SWITCH_pbda_274089 3 Non-border 
+		SWITCH_miig_955746
+		SWITCH_wlgs_470547
+		SWITCH_lmxu_449163
+	SWITCH_wlgs_470547 3 Non-border 
+		SWITCH_rliw_398927
+		SWITCH_miig_955746
+		SWITCH_pbda_274089
+	SWITCH_miig_955746 3 Non-border 
+		SWITCH_pbda_274089
+		SWITCH_lmxu_449163
+		SWITCH_wlgs_470547
+	SWITCH_lmxu_449163 3 Border 
+		SWITCH_jezk_239900
+		SWITCH_miig_955746
+		SWITCH_pbda_274089
+	SWITCH_rliw_398927 3 Border 
+		SWITCH_gkop_529867
+		SWITCH_mzgj_512972
+		SWITCH_wlgs_470547
+DOMAIN_zhbo_471031
+	SWITCH_bdka_975869 3 Non-border 
+		SWITCH_qkri_419698
+		SWITCH_pvjs_950148
+		SWITCH_vuuo_504144
+	SWITCH_vuuo_504144 2 Non-border 
+		SWITCH_qkri_419698
+		SWITCH_bdka_975869
+	SWITCH_qkri_419698 3 Non-border 
+		SWITCH_bdka_975869
+		SWITCH_vuuo_504144
+		SWITCH_mzgj_512972
+	SWITCH_mzgj_512972 3 Border 
+		SWITCH_rliw_398927
+		SWITCH_qkri_419698
+		SWITCH_pvjs_950148
+	SWITCH_pvjs_950148 3 Border 
+		SWITCH_fmbx_991705
+		SWITCH_bdka_975869
+		SWITCH_mzgj_512972
+DOMAIN_pzff_612139
+	SWITCH_agdc_201117 3 Non-border 
+		SWITCH_dqql_754749
+		SWITCH_guan_484432
+		SWITCH_nyur_162397
+	SWITCH_guan_484432 2 Non-border 
+		SWITCH_agdc_201117
+		SWITCH_unau_346035
+	SWITCH_dqql_754749 3 Non-border 
+		SWITCH_agdc_201117
+		SWITCH_nyur_162397
+		SWITCH_unau_346035
+	SWITCH_nyur_162397 3 Border 
+		SWITCH_fmbx_991705
+		SWITCH_agdc_201117
+		SWITCH_dqql_754749
+	SWITCH_unau_346035 3 Border 
+		SWITCH_gkop_529867
+		SWITCH_guan_484432
+		SWITCH_dqql_754749
+
+

@@ -28,4 +28,5 @@ private:
 	std::unordered_set<std::string> neighborIds;
 
 	int border_nodes; 
+
 };

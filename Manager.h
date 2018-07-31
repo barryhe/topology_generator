@@ -21,4 +21,7 @@ private:
 	int mBorders;
 
 	bool doLog;
+	int nextAvailablePort;
+
+	int useNextPort();
 };

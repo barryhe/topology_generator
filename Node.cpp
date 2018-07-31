@@ -9,6 +9,7 @@ Node::Node(int num_edges, std::string rid, std::vector<std::string> & hostNames,
 	}
 	this->id = rid;
 	this->border_nodes = 0;
+	this->nextAvailablePort = 0;
 
 	mDomain = pDomain;
 }
