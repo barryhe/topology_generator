@@ -9,7 +9,8 @@ parser.add_argument('--topo', required=True)
 parser.add_argument('--dir', required=True)
 parser.add_argument('--routes', default=None)
 parser.add_argument('--log', action="store_true", default=False)
-parser.add_argument('--rib', required=True)
+parser.add_argument('--rib', required=False)
+parser.add_argument('--fib', required=True)
 
 FLAGS = parser.parse_args()
 
@@ -30,27 +31,23 @@ def log(s):
 def read_topo(fname):
     edges = []
     nodes = []
+    rows = []
     ports = {}
-    tuples = []
-
     with open(fname) as f:
         edges = f.readlines()
-        tuples = map(lambda e: e.strip().split(' '), edges);
+        rows = map(lambda e: e.strip().split(' '), edges)
         edges = map(lambda e: (e.strip().split(' ')[0], e.strip().split(' ')[1]), edges)
     for u,v in edges:
         nodes.append(u)
         nodes.append(v)
+    nodes = list(set(nodes))
 
-    for u,v,p in tuples:
+    for u,v,p in rows: 
         if u not in ports:
             ports[u] = {}
 
-        if v not in ports[u]:
-            ports[u][v] = {}
-
         ports[u][v] = p
 
-    nodes = list(set(nodes))
     return nodes, edges, ports
 
 def allpairs_shortest_path(nodes, edges):
@@ -132,14 +129,51 @@ def main():
     # Now write the routes file
     routefile = '%s/routes.csv' % FLAGS.dir
     with open(routefile, 'w') as f:
-        print >>f, "src,dst,nexthop,metric,port" # with next-hop port
+        print >>f, "src,dst,nexthop,metric"
         for u in routes.keys():
             for v in routes[u].keys():
-                print u, v, routes[u][v]
-                print >> f, "%s,%s,%s,%d,%s" % (u, v, routes[u][v], dist[u][v], ports[u][routes[u][v]])
+                print >>f, "%s,%s,%s,%d" % (u, v, routes[u][v], dist[u][v])
     log("write %s" % routefile)
 
+    # setup next-hops
+    # nexthops[src][dst] = next hop
+    nexthops = {}
+    for u in routes.keys():
+        for v in routes.keys(): 
+            if u not in nexthops:
+                nexthops[u] = {}
+            if u == v: 
+                nexthops[u][v] = ""
+            else:
+                temp = v
+                while routes[u][temp] != temp:
+                    temp = routes[u][temp]
+                nexthops[u][v] = temp
+
+    # Now create the fibs file
+    with open(FLAGS.fib, 'w') as f:
+        print >> f, "input_port,dst_ip,output_port,metric"
+        for u in nexthops.keys():
+            if u[:4] == "HOST":
+                for v in nexthops.keys():
+                    if v[:4] == "HOST" and v != u:
+                        prev = u
+                        dst = v
+                        curr = nexthops[prev][dst]
+
+                        while curr != dst:
+
+                            print >> f, "%s,%s,%s,%s" % (
+                                            ports[curr][prev],
+                                            dst,
+                                            ports[curr][nexthops[curr][dst]],
+                                            dist[curr][dst])
+                            prev = curr
+                            curr = nexthops[curr][dst]
+
+
     # Now create the ribs file
+    '''
     with open(FLAGS.rib, 'w') as f:
         print >>f, "dstprefix,local,remote"
         count = 0
@@ -151,6 +185,7 @@ def main():
             count += 1
             log("[%3d/%3d: %6.3f%%] Done %20s (%11d bytes, %.3fGB)" % (count, N, count*100.0/N, u, f.tell(), f.tell()/1e9))
     log("wrote %s" % FLAGS.rib)
+    '''
 if __name__ == "__main__":
     main()
 
