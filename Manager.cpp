@@ -12,12 +12,14 @@
 
 #define charLength 4
 
-Manager::Manager(int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, bool pLog) {
+Manager::Manager(int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, bool pLog, bool pVis) {
 	mDomains = num_domains;
 	mHosts	 = num_hosts;
 	mNodes	 = num_nodes;
 	mEdges	 = num_edges;
 	mBorders = num_borders;
+
+	mVis = pVis;
 
 	nextAvailablePort = 0;
 
@@ -198,7 +200,7 @@ bool Manager::runTopology() {
 			for (unsigned i = 0; i < curr->getHosts().size(); ++i) {
 				inet << curr->getId() << " " << curr->getHosts()[i] 
 					 << " " << useNextPort() << std::endl;
-				inet << curr->getHosts()[i] << " " << curr->getId() << " " << 0 << std::endl;
+				inet << curr->getHosts()[i] << " " << curr->getId() << " " << useNextPort() << std::endl;
 			}
 		}
 
@@ -219,6 +221,53 @@ bool Manager::runTopology() {
 	if (count != mNodes * mDomains 
 		|| idSet.size() - mHosts * mDomains * (mNodes - mBorders) != 0) {
 		return false;
+	}
+
+	if (mVis) {
+		// need visualization
+		std::ofstream file("html/miserables.json");
+		file << "{\"nodes\":[" << std::endl; 
+		for (unsigned i = 0; i < domains.size(); ++i) {
+			for (unsigned j = 0; j < domains[i]->getNodes().size(); ++j) {
+				file << "{\"id\":\"" << domains[i]->getNodes()[j]->getId() << "\", \"group\":" << (i + 1) << "}"; 
+				if (i != domains.size() - 1 || j != domains[i]->getNodes().size() - 1)
+					file << ", ";
+				file << std::endl;
+			}
+		}
+
+
+		file << "], \"links\":[" << std::endl;
+
+		while (!queue.empty()) queue.pop();
+		visited.clear();
+		queue.push(domains[0]->getNodes()[0]);
+		visited.insert(domains[0]->getNodes()[0]); 
+
+		std::stringstream ss;
+		while (!queue.empty()) {
+			Node * curr = queue.front();
+			queue.pop();
+
+			for (unsigned i = 0; i < curr->getNeighbors().size(); ++i) {
+				Node * n = curr->getNeighbors()[i]; 
+				if (visited.find(n) == visited.end()) {
+
+					count--;
+					visited.insert(n);
+					queue.push(n); 
+				} 
+				
+				ss << "{\"source\":\"" << curr->getId() 
+					<< "\",\"target\":\"" << n->getId() << "\", \"value\": 2}";
+
+				ss << ",";
+				ss << std::endl;
+			}
+		}
+		file << ss.str().substr(0, ss.str().length() - 2); 
+		file << "]}" << std::endl;
+		file.close();
 	}
 
 	return true;

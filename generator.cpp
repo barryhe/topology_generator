@@ -11,6 +11,7 @@ int main(int argc, char** argv) {
 	int num_edges = 5; 
 	int num_borders = 5; 
 	bool log = false; 
+	bool vis = false;
 
 	for (int i = 1; i < argc; ++i) {
 		std::string curr (argv[i]); 
@@ -41,6 +42,8 @@ int main(int argc, char** argv) {
 			ss >> num_hosts; 
 		} else if (curr.substr(0, 2) == "-l") {
 			log = true;
+		} else if (curr.substr(0, 2) == "-v") {
+			vis = true;
 		} else {
 			std::cout << "Error: invalid option detected. Type './topo_generator --help' for more information" << std::endl;
 			return 0;
@@ -57,7 +60,7 @@ int main(int argc, char** argv) {
 
 	bool success = false;
 	while (!success) {
-		Manager * networkManager = new Manager(num_domains, num_hosts, num_nodes, num_edges, num_borders, log); 
+		Manager * networkManager = new Manager(num_domains, num_hosts, num_nodes, num_edges, num_borders, log, vis); 
 
 		success = networkManager->runTopology(); 
 

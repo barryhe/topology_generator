@@ -4,7 +4,7 @@
 
 class Manager {
 public:
-	Manager(int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, bool);
+	Manager(int num_domains, int num_hosts, int num_nodes, int num_edges, int num_borders, bool, bool);
 	~Manager();
 	std::ofstream log;
 
@@ -19,6 +19,7 @@ private:
 	int mNodes;
 	int mEdges;
 	int mBorders;
+	bool mVis;
 
 	bool doLog;
 	int nextAvailablePort;
